@@ -1,4 +1,5 @@
 import OurProduct from "@/components/OurProduct/OurProduct";
+import OurTokens from "@/components/OurTokens/OurTokens";
 import RoadMap from "@/components/RoadMap/RoadMap";
 import TopSection from "@/components/TopSection/TopSection";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <TopSection />
       <OurProduct />
       <RoadMap />
+      <OurTokens />
     </main>
   );
 }

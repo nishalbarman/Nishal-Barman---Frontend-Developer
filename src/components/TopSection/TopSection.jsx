@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import CustomButton from "../CustomButton/CustomButton";
+import ClientSideTopSection from "./ClientSideTopSection";
 
 function TopSection() {
   return (
@@ -82,14 +84,7 @@ function TopSection() {
           id velit proin eleifend id mauris. Amet sem in id eget nunc quam lacus
           tellus augue.
         </p>
-        <button className="flex justify-center items-center gap-4 rounded-[90px] text-black bg-gradient-to-r from-[#ffc900] to-[#feab00] h-[51px] w-[171px] text-[16px] font-bold border-[3px] border-[white] shadow-[0_0_0_4px_#ffc900,_0_0_0_4px_#feab00;]">
-          Get Details{" "}
-          <Image
-            src={"/icons/right-arrow-tailless.svg"}
-            width={10}
-            height={10}
-          />
-        </button>
+        <ClientSideTopSection />
       </div>
     </div>
   );

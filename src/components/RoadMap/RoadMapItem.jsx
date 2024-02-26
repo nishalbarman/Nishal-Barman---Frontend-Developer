@@ -3,11 +3,7 @@ import React from "react";
 
 function RoadMapItem({ title, description, year, index }) {
   return (
-    <div
-      style={{
-        scrollSnapAlign: "start",
-      }}
-      className="h-fit w-[399px] flex flex-col items-center">
+    <div className="snap-start h-fit w-[399px] flex flex-col items-center">
       <p
         style={{
           WebkitTextStroke: "6px #FEE167",

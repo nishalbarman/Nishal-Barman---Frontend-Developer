@@ -52,6 +52,13 @@ function OurProduct() {
         height={220}
       />
 
+      <Image
+        className="absolute right-0 top-[260px]"
+        src={"/assets/large-round-product-right-side.png"}
+        width={1616}
+        height={1616}
+      />
+
       <div className="relative flex flex-col items-center w-fit h-fit">
         <SectionTitle title={"Our-Products"} />
         <p className="font-inter text-[20px] text-center">
