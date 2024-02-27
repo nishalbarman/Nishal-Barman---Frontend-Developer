@@ -77,7 +77,7 @@ export function GET(req) {
     let page = searchParams.get("page") || 1;
     let limit = searchParams.get("limit") || 6;
 
-    if (limit > roadMapDemoItems.length) limit = roadMapDemoItems.length;
+    if (limit > demoData.length) limit = demoData.length;
 
     const total = Math.round(demoData.length % limit);
     const tokenData = demoData.slice(page - 1, limit);
