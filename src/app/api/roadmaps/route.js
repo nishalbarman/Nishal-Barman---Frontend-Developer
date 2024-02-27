@@ -48,6 +48,8 @@ export function GET(req) {
     const page = searchParams.get("page") || 1;
     const limit = searchParams.get("limit") || 6;
 
+    if (limit > roadMapDemoItems.length) limit = roadMapDemoItems.length;
+
     const total = Math.round(roadMapDemoItems.length % limit);
     const roadmapData = roadMapDemoItems.slice(page - 1, limit);
 
