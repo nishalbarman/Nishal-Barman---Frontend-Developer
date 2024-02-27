@@ -31,20 +31,7 @@ function OurTokens() {
   return (
     <div
       id="tokens"
-      className="max-[1440px]:custom-zoom p-[0px_2%]  relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem] overflow-hidden pb-[5rem]">
-      <Image
-        className="opacity-[0.7] absolute left-[-500px] top-[-70px]"
-        src={"/assets/large-round-circle.svg"}
-        width={1570}
-        height={1570}
-      />
-      <Image
-        className="animate-up-down z-[999] absolute left-[-50px] bottom-[0]"
-        src={"/assets/piramid.svg"}
-        width={220}
-        height={220}
-      />
-
+      className="max-[1440px]:custom-zoom p-[0px_2%] relative h-fit w-[100%] flex flex-col items-center overflow-hidden">
       <div className="relative flex flex-col items-center w-fit h-fit">
         <SectionTitle
           title={"Our-Tokens"}
@@ -59,7 +46,7 @@ function OurTokens() {
             return <TokenItem key={index} {...item} />;
           })}
         </div>
-        <div className="flex justify-evenly items-center gap-10 mt-[60px]">
+        <div className="flex justify-evenly items-center gap-10 mt-[9%]">
           <button
             onClick={() => {
               setPage((prev) => prev - 1);

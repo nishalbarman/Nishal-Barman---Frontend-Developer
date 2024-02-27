@@ -3,7 +3,6 @@ import React from "react";
 
 function SectionTitle({ title, textColor, align, animation = undefined }) {
   const splitedTitle = title.split("-");
-  console.log(textColor ? "true" : "false", align);
   return (
     <div
       style={
@@ -16,7 +15,7 @@ function SectionTitle({ title, textColor, align, animation = undefined }) {
       className={`${!!animation && "opacity-0"} flex justify-${
         align || "center"
       } mb-8`}>
-      <p className="relative font-kanit font-semibold text-[56px] font-kanit">
+      <p className="relative font-kanit font-semibold text-[56px] font-kanit  overflow-hidden">
         {splitedTitle[0] || ""}
         <span
           className={`z-[1] font-kanit font-semibold text-[56px] text-[${

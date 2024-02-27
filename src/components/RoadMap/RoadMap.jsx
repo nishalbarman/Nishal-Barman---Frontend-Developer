@@ -24,50 +24,42 @@ async function RoadMap() {
   return (
     <div
       id="roadmap"
-      className="w-[100%] flex flex-col items-center mt-[8.5rem] overflow-x-hidden">
-      <div className="bg-[#fecc00] min-h-[500px] w-[100%] p-[4%_13%]">
-        <div className={`flex justify-left} mb-8`}>
-          <p
-            style={{
-              animation:
-                "roadmap-right-to-left 3s ease-in-out 1s 1 normal forwards",
-            }}
-            className="relative font-kanit font-semibold text-[56px] font-kanit">
-            <span
-              className={`z-[1] font-kanit font-semibold text-[56px] text-[black]`}>
-              {" "}
-              RoadMap
-            </span>
-            <Image
-              className="inline-block absolute right-[-10px] bottom-[-5px] w-[186px] select-none"
-              src={"/assets/bottom-curve-line-black.svg"}
-              width={240}
-              height={240}
-            />
-          </p>
+      className="w-[100%] bg-[#fecc00] flex flex-col items-center p-[0_13%] max-[597px]:p-[0_10px] bg-split-div">
+      <div className="translate-y-[10rem] w-[100%] mt-[-5rem]">
+        <div
+          style={{
+            animation:
+              "roadmap-right-to-left 3s ease-in-out 1s 1 normal forwards",
+          }}
+          className="flex w-fit flex-col justify-left">
+          <span className="font-kanit font-semibold text-[56px] text-[black]">
+            RoadMap
+          </span>
+          <Image
+            className="w-[150px] self-end"
+            src={"/assets/bottom-curve-line-black.svg"}
+            width={240}
+            height={240}
+          />
         </div>
       </div>
 
       <div
+        className="flex snap-x snap-mandatory overflow-x-scroll items-center w-[100%] max-[597px]:gap-10 p-[5%_0]"
         style={{
           animation:
             "roadmap-right-to-left 2s ease-in-out 0s 1 normal forwards",
-        }}
-        className="z-[999] mt-[-373px] flex flex-col items-center w-[100%] p-[0_13%] max-[597px]:p-[0_1%] overflow-x-auto">
-        <div className="z-[999] flex snap-x snap-mandatory overflow-x-auto  items-center w-[100%] p-[2rem_0px] max-[597px]:gap-10">
-          <GapStart />
-          {roadmapData?.map((item, index, array) => {
-            return (
-              <>
-                <RoadMapItem key={index} index={index + 1} {...item} />
-                {index !== array.length - 1 && (
-                  <GapFiller key={index + index} />
-                )}
-              </>
-            );
-          })}
-          <GapEnd />
-        </div>
+        }}>
+        <GapStart />
+        {roadmapData?.map((item, index, array) => {
+          return (
+            <>
+              <RoadMapItem key={index} index={index + 1} {...item} />
+              {index !== array.length - 1 && <GapFiller key={index + index} />}
+            </>
+          );
+        })}
+        <GapEnd />
       </div>
     </div>
   );
