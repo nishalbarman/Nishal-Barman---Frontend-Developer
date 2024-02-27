@@ -23,7 +23,6 @@ export default function RootLayout({ children }) {
         <WagmiContextProvider initialState={initialState}>
           {children}
         </WagmiContextProvider>
-        {children}
       </body>
     </html>
   );
