@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="relative w-[100%] flex flex-col items-center p-[0_13%] bg-split_div_footer">
+    <div className="w-[100%] flex flex-col items-center p-[0_13%] bg-split_div_footer">
       <div className="z-[999] relative p-[0_8%] flex justify-between items-center  h-[244px] items-center p-1 border-[rgb(113,96,26)] border-[4px] rounded-[28px] bg-[#141411] w-[100%] max-[913px]:flex-col max-[913px]:gap-10 max-[913px]:h-fit max-[913px]:p-10">
         <div className="flex flex-col justify-start gap-2 max-[913px]:flex-row">
           <p className="font-inter font-semibold text-[44px] max-[913px]:text-[30px]">
