@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="max-[1366px]:scale-[0.9] relative w-[100%] flex flex-col items-center mt-[8.5rem]">
+    <div className="relative w-[100%] flex flex-col items-center mt-[8.5rem]">
       <Image
         className="absolute left-0 top-0"
         src={"/assets/round-with-star.svg"}
