@@ -9,7 +9,7 @@ const getRoadMapData = async (page = 1, limit = 100) => {
   try {
     // server component, thats why we need to give the proper domain name
     const { data } = await axios.get(
-      `http://localhost:3000/api/roadmaps?page=${page}&limit=${limit}`
+      `https://nishal-barman-frontend-developer.vercel.app/api/roadmaps?page=${page}&limit=${limit}`
     );
     console.log(data);
     return data;
