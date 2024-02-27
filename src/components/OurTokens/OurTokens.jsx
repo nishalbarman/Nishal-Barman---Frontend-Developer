@@ -31,7 +31,7 @@ function OurTokens() {
   return (
     <div
       id="tokens"
-      className="max-[1366px]:custom-zoom p-[0px_5px]  relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem] overflow-hidden pb-[5rem]">
+      className="max-[1440px]:custom-zoom p-[0px_5px]  relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem] overflow-hidden pb-[5rem]">
       <Image
         className="opacity-[0.7] absolute left-[-500px] top-[-70px]"
         src={"/assets/large-round-circle.svg"}
