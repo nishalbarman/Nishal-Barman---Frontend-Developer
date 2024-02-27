@@ -3,11 +3,13 @@ import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import ClientSideTopSection from "./ClientSideTopSection";
 import Navbar from "../Navbar/Navbar";
+import HamBurger from "../HamBurger/HamBurger";
 
 function TopSection() {
   return (
     <div className="relative h-fit w-[100%] flex flex-col items-center bg-[url('/assets/dust.svg')] bg-no-repeat bg-center bg-fill">
       <Navbar />
+      <HamBurger />
 
       <Image
         className="absolute left-0 top-0"
@@ -39,38 +41,40 @@ function TopSection() {
 
       <div className="relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center">
         <div className="relative flex items-center">
-          <p className="font-semibold uppercase text-[76px] font-kanit">
+          <p className="text-nowrap font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px]  ">
             Your gatew
-            <span className="relative before:content-gateway_star before:absolute before:top-[43%] before:left-[57%] before:translate-x-[-50%] before:translate-y-[-50%] before:z-[10]">
+            <span className="relative before:content-gateway_star before:absolute before:top-[43%] before:left-[57%] before:translate-x-[-50%] before:translate-y-[-50%] before:z-[10] max-[827px]:before:hidden">
               a
             </span>
             y
           </p>
           <Image
-            className="absolute right-[-50px] bottom-[-110px]"
+            className="absolute right-[-50px] bottom-[-110px] max-[827px]:w-[80px] max-[827px]:top-[35px] max-[827px]:right-[-16px]"
             src={"/assets/ring-with-star.png"}
             width={200}
             height={200}
           />
         </div>
 
-        <p className="font-semibold uppercase text-[76px] font-kanit">to</p>
+        <p className="font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px] ">
+          to
+        </p>
 
         <Image
-          className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] select-none"
+          className="max-[827px]:w-[160px] max-[827px]:h-[160px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] select-none w-[340px] h-[340px]"
           src={"/assets/bank.png"}
           width={340}
           height={340}
         />
 
         <div className="relative">
-          <span className="relative z-[2] font-bold before:content-star before:absolute before:left-[-semi16px] uppercase text-[76px] font-kanit">
+          <span className="relative z-[2] font-bold before:content-star before:absolute before:left-[-semi16px] uppercase text-[76px] font-kanit max-[827px]:text-[45px] text-nowrap">
             <span className="relative before:content-defi_d_star before:absolute before:top-[40%] before:left-[1px] before:translate-x-[-50%] before:translate-y-[-50%] before:z-[10]">
               D
             </span>
             efi on{" "}
           </span>
-          <span className="relative z-[1] font-kanit font-semibold uppercase text-[76px] text-[#FECC00]">
+          <span className="relative z-[1] font-kanit font-semibold uppercase text-[76px] max-[827px]:text-[45px] text-[#FECC00]">
             Bitcoin
           </span>
           <Image
@@ -81,8 +85,8 @@ function TopSection() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-[40px] items-center w-[1000px] mt-[-65px]">
-        <p className="text-[24px] text-center text-[#FDFFE3] font-inter">
+      <div className="flex flex-col gap-[40px] items-center w-[1000px] max-[958px]:w-[90%] mt-[-65px]">
+        <p className="text-[24px] text-center text-[#FDFFE3] font-inter max-[958px]:text-[18px]">
           Lorem ipsum dolor sit amet consectetur. Porta amet tellus suspendisse
           id velit proin eleifend id mauris. Amet sem in id eget nunc quam lacus
           tellus augue.

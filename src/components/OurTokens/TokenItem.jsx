@@ -5,7 +5,7 @@ import CustomButton from "../CustomButton/CustomButton";
 
 function TokenItem({ img, tokenName, symbol, decimals, marketcap, chain }) {
   return (
-    <div className="flex flex-col items-start w-[314px] h-fit p-[26px] border-[rgb(113,96,26)] border-[2px] rounded-[12px] bg-[#141411]">
+    <div className="flex flex-col items-start w-[314px] h-fit p-[26px] border-[rgb(113,96,26)] border-[2px] rounded-[12px] bg-[#141411] z-[999]">
       <Image
         className="self-center object-contain aspect-square mb-5"
         src={img}

@@ -37,7 +37,9 @@ function OurProduct() {
   ];
 
   return (
-    <div className="relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem]">
+    <div
+      id="products"
+      className="relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem]">
       <Image
         className="absolute left-[-500px] top-[-70px]"
         src={"/assets/large-round-circle.svg"}

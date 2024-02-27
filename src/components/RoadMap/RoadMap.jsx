@@ -1,49 +1,30 @@
 import Image from "next/image";
-import SectionTitle from "../SectionTitle/SectionTitle";
 import RoadMapItem from "./RoadMapItem";
+import axios from "axios";
+import GapFiller from "./GapFiller";
+import GapStart from "./GapStart";
+import GapEnd from "./GapEnd";
 
-function RoadMap() {
-  const productItem = [
-    {
-      title: "Initial Design and Development",
-      description:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada",
-      qYear: "Q4 2023",
-    },
-    {
-      title: "Initial Design and Development",
-      description:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada",
-      qYear: "Q4 2023",
-    },
-    {
-      title: "Initial Design and Development",
-      description:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada",
-      qYear: "Q4 2023",
-    },
-    {
-      title: "Initial Design and Development",
-      description:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada",
-      qYear: "Q4 2023",
-    },
-    {
-      title: "Initial Design and Development",
-      description:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada",
-      qYear: "Q4 2023",
-    },
-    {
-      title: "Initial Design and Development",
-      description:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada",
-      qYear: "Q4 2023",
-    },
-  ];
+const getRoadMapData = async (page = 1, limit = 100) => {
+  try {
+    // server component, thats why we need to give the proper domain name
+    const { data } = await axios.get(
+      `http://localhost:3000/api/roadmaps?page=${page}&limit=${limit}`
+    );
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log("RoadMap Component Error----------------->", error);
+    return { total: 0, roadmapData: [] };
+  }
+};
 
+async function RoadMap() {
+  const { total, roadmapData } = await getRoadMapData(1, 50);
   return (
-    <div className="w-[100%] flex flex-col items-center mt-[8.5rem]">
+    <div
+      id="roadmap"
+      className="w-[100%] flex flex-col items-center mt-[8.5rem] overflow-x-auto">
       <div className="bg-[#fecc00] min-h-[500px] w-[100%] p-[4%_13%]">
         <div className={`flex justify-left} mb-8`}>
           <p className="relative font-kanit font-semibold text-[56px] font-kanit">
@@ -62,18 +43,20 @@ function RoadMap() {
         </div>
       </div>
 
-      <div className="z-[999] mt-[-345px] flex flex-col items-center w-[100%] p-[0_13%]">
-        <div
-          style={{
-            display: "flex",
-            overflowX: "auto",
-            scrollSnapType: "x mandatory",
-            webkitOverflowScrolling: "touch",
-          }}
-          className="z-[999] flex gap-4 overflow-x-auto  items-center w-[100%] p-[2rem_0px]">
-          {productItem?.map((item, index) => {
-            return <RoadMapItem key={index} index={index + 1} {...item} />;
+      <div className="z-[999] mt-[-373px] flex flex-col items-center w-[100%] p-[0_13%] max-[597px]:p-[0_1%] overflow-x-auto">
+        <div className="z-[999] flex snap-x snap-mandatory overflow-x-auto  items-center w-[100%] p-[2rem_0px] max-[597px]:gap-10">
+          <GapStart />
+          {roadmapData?.map((item, index, array) => {
+            return (
+              <>
+                <RoadMapItem key={index} index={index + 1} {...item} />
+                {index !== array.length - 1 && (
+                  <GapFiller key={index + index} />
+                )}
+              </>
+            );
           })}
+          <GapEnd />
         </div>
       </div>
     </div>

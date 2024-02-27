@@ -5,8 +5,11 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import TokenItem from "./TokenItem";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 function OurTokens() {
+  const navigation = useRouter();
+
   const [tokenData, setTokenData] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
@@ -26,16 +29,18 @@ function OurTokens() {
   }, [page]);
 
   return (
-    <div className="relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem]">
+    <div
+      id="tokens"
+      className="relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem] overflow-hidden pb-[5rem]">
       <Image
-        className="absolute left-[-500px] top-[-70px]"
+        className="opacity-[0.7] absolute left-[-500px] top-[-70px]"
         src={"/assets/large-round-circle.svg"}
         width={1570}
         height={1570}
       />
 
       <Image
-        className="absolute left-[-50px] bottom-[0]"
+        className="z-[999] absolute left-[-50px] bottom-[0]"
         src={"/assets/piramid.svg"}
         width={220}
         height={220}
@@ -56,6 +61,7 @@ function OurTokens() {
           <button
             onClick={() => {
               setPage((prev) => prev - 1);
+              navigation.push("/#tokens");
             }}
             disabled={page <= 1}
             className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed">
@@ -67,6 +73,7 @@ function OurTokens() {
           <button
             onClick={() => {
               setPage((prev) => prev + 1);
+              navigation.push("/#tokens");
             }}
             disabled={page >= totalPage}
             className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed">

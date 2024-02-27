@@ -1,15 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
+const parseItem = (number) => {
+  if (number.toString().length === 1) {
+    return `0${number}`;
+  }
+};
+
 function RoadMapItem({ title, description, year, index }) {
   return (
-    <div className="snap-start h-fit w-[399px] flex flex-col items-center">
+    <div className="snap-start h-fit w-[399px] flex flex-col items-center max-[597px]:w-[300px]">
       <p
         style={{
           WebkitTextStroke: "6px #FEE167",
         }}
         className="text-[200px] font-kanit font-bold text-[#FECC00] mb-[-100px]">
-        01
+        {parseItem(index)}
       </p>
 
       <div className="relative flex flex-col items-center w-[399px] p-[24px] bg-[#151821] rounded-[20px]">
