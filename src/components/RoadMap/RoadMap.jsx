@@ -24,7 +24,7 @@ async function RoadMap() {
   return (
     <div
       id="roadmap"
-      className="w-[100%] flex flex-col items-center mt-[8.5rem] overflow-x-hidden">
+      className="max-[1366px]:scale-[0.9] w-[100%] flex flex-col items-center mt-[8.5rem] overflow-x-hidden">
       <div className="bg-[#fecc00] min-h-[500px] w-[100%] p-[4%_13%]">
         <div className={`flex justify-left} mb-8`}>
           <p

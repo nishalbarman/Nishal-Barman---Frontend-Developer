@@ -32,7 +32,7 @@ function TopSection() {
         height={350}
       />
 
-      <div className="relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center  max-[591px]:scale-[0.9]">
+      <div className="max-[1366px]:scale-[0.9] relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center  max-[591px]:scale-[0.9]">
         <div
           style={{
             animation:
@@ -99,7 +99,7 @@ function TopSection() {
         style={{
           animation: "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
         }}
-        className="flex flex-col gap-[40px] items-center w-[1000px] max-[958px]:w-[90%] mt-[-65px] opacity-0">
+        className="max-[1366px]:scale-[0.9] flex flex-col gap-[40px] items-center w-[1000px] max-[958px]:w-[90%] mt-[-65px] opacity-0">
         <p className="text-[24px] text-center text-[#FDFFE3] font-inter max-[958px]:text-[18px]">
           Lorem ipsum dolor sit amet consectetur. Porta amet tellus suspendisse
           id velit proin eleifend id mauris. Amet sem in id eget nunc quam lacus
