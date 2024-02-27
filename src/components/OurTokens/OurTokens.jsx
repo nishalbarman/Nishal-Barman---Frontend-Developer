@@ -39,7 +39,7 @@ function OurTokens() {
         height={1570}
       />
       <Image
-        className="z-[999] absolute left-[-50px] bottom-[0]"
+        className="animate-up-down z-[999] absolute left-[-50px] bottom-[0]"
         src={"/assets/piramid.svg"}
         width={220}
         height={220}

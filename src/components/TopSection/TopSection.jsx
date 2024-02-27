@@ -12,7 +12,7 @@ function TopSection() {
       <HamBurger />
 
       <Image
-        className="absolute left-0 top-0"
+        className="animate-up-down absolute left-0 top-0"
         src={"/assets/cube.svg"}
         width={132}
         height={154}
@@ -26,7 +26,7 @@ function TopSection() {
       />
 
       <Image
-        className="absolute right-0 bottom-[-400px]"
+        className="animate-up-down absolute right-0 bottom-[-400px]"
         src={"/assets/star-react.png"}
         width={350}
         height={350}

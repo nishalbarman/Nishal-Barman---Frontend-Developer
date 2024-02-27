@@ -14,6 +14,7 @@ module.exports = {
       animation: {
         "send-top-rotate":
           "send-top-rotate 2s ease-in-out 0s 1 normal forwards",
+        "up-down": "up-down 5s ease-in-out 0s infinite normal forwards",
       },
       content: {
         star: "url('/assets/star.svg')",

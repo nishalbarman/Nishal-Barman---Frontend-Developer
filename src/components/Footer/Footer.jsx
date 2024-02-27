@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="relative w-[100%] flex flex-col items-center mt-[8.5rem]">
       <Image
-        className="absolute left-0 top-0"
+        className="animate-up-down absolute left-0 top-0"
         src={"/assets/round-with-star.svg"}
         width={350}
         height={300}

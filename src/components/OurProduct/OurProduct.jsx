@@ -51,7 +51,7 @@ function OurProduct() {
       />
 
       <Image
-        className="absolute left-[-50px] bottom-[0]"
+        className="animate-up-down absolute left-[-50px] bottom-[0]"
         src={"/assets/piramid.svg"}
         width={220}
         height={220}
