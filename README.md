@@ -4,9 +4,10 @@ Basic simple webpage coded with NextJs. I gave my best to convert the figma desi
 
 ## Run the development server
 
-Just copy and paste the below command by going into the root directly
+Just copy and paste the below commands going into the root directly
 
 ```bash
+npm install
 npm run dev
 ```
 
@@ -26,5 +27,5 @@ Now you can visit the webpage at [http://localhost:3000](http://localhost:3000)
 - [Visit deployed url](https://nishal-barman-frontend-developer.vercel.app/)
 
 # Quick Preview
-[Preview video](
-https://drive.google.com/file/d/1TZicGV80rrSTOSsq3QqFNPlc9mu0hacu/view?usp=drive_link)
+
+[Preview video](https://drive.google.com/file/d/1TZicGV80rrSTOSsq3QqFNPlc9mu0hacu/view?usp=drive_link)

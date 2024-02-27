@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import WalletConnectButton from "../WalletConnectButton/WalletConnectButton";
 
 function HamBurger() {
   return (
@@ -51,9 +52,7 @@ function HamBurger() {
                 Roadmap
               </Link>
             </div>
-            <button className="bg-[#F9D326] w-[187px] h-[55px] rounded-[10px] text-black font-bold">
-              Conntect wallet
-            </button>
+            <WalletConnectButton />
           </div>
         </div>
       </div>

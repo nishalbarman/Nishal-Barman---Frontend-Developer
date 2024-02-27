@@ -1,3 +1,8 @@
+import { headers } from "next/headers";
+import WagmiContextProvider from "@/contexts/WagmiContext";
+import { cookieToInitialState } from "wagmi";
+import { config } from "@/config/wagmi";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./animations.css";
@@ -10,9 +15,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const initialState = cookieToInitialState(config, headers().get("cookie"));
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <WagmiContextProvider initialState={initialState}>
+          {children}
+        </WagmiContextProvider>
+        {children}
+      </body>
     </html>
   );
 }
