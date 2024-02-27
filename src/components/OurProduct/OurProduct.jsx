@@ -42,7 +42,7 @@ function OurProduct() {
         animation: "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
       }}
       id="products"
-      className="opacity-0 relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem]">
+      className="p-[0px_5px] opacity-0 relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem]">
       <Image
         className="absolute left-[-500px] top-[-70px]"
         src={"/assets/large-round-circle.svg"}
