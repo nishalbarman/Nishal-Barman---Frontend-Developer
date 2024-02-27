@@ -19,18 +19,21 @@ function Footer() {
             src={"/icons/mail.svg"}
             width={80}
             height={80}
+            alt="mail"
           />{" "}
           <Image
             className="object-contain aspect-square"
             src={"/icons/twitter.svg"}
             width={80}
             height={80}
+            alt="twitter"
           />
           <Image
             className={""}
             src={"/icons/instagram.svg"}
             width={80}
             height={80}
+            alt="instagram"
           />
         </div>
       </div>

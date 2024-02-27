@@ -36,6 +36,7 @@ function SectionTitle({ title, textColor, align, animation = undefined }) {
           }`}
           width={240}
           height={240}
+          alt="curve"
         />
       </p>
     </div>

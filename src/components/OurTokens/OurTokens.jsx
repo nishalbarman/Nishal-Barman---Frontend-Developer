@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import TokenItem from "./TokenItem";
 import { useEffect, useState } from "react";

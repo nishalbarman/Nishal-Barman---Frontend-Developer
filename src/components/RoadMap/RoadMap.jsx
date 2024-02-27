@@ -40,6 +40,7 @@ async function RoadMap() {
             src={"/assets/bottom-curve-line-black.svg"}
             width={240}
             height={240}
+            alt="curve"
           />
         </div>
       </div>

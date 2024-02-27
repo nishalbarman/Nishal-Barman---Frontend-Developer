@@ -14,6 +14,7 @@ export default function Home() {
         src={"/bg-assets/top-right-circle.png"}
         width={1200}
         height={1200}
+        alt="circle"
       />
 
       <Image
@@ -21,6 +22,7 @@ export default function Home() {
         src={"/assets/cube.svg"}
         width={132}
         height={154}
+        alt="cube"
       />
 
       <Image
@@ -28,6 +30,7 @@ export default function Home() {
         src={"/assets/star-react.png"}
         width={235}
         height={235}
+        alt="star"
       />
 
       <Image
@@ -35,6 +38,7 @@ export default function Home() {
         src={"/assets/piramid.svg"}
         width={155}
         height={155}
+        alt="piramid"
       />
 
       <Image
@@ -42,6 +46,7 @@ export default function Home() {
         src={"/bg-assets/middle-left-circle.png"}
         width={1571}
         height={1571}
+        alt="circle"
       />
 
       <Image
@@ -49,6 +54,7 @@ export default function Home() {
         src={"/bg-assets/middle-middle-circle.png"}
         width={1100}
         height={1100}
+        alt="circle"
       />
 
       <Image
@@ -56,6 +62,7 @@ export default function Home() {
         src={"/bg-assets/bottom-left-circle.png"}
         width={1220}
         height={1220}
+        alt="circle"
       />
 
       <Image
@@ -63,6 +70,7 @@ export default function Home() {
         src={"/assets/circle-with-star.svg"}
         width={368}
         height={264}
+        alt="circle star"
       />
 
       <TopSection />

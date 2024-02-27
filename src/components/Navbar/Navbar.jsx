@@ -7,7 +7,12 @@ function Navbar() {
   return (
     <div className="max-[1113px]:hidden z-[99] mt-10 relative bg-[#34300E] border-[1px] border-[#706F57] shadow-[0px_0px_10px_3px_#352F0E] flex items-center justify-between h-[88px] w-[94%] rounded-[16px] p-[0_2%]">
       <div className="flex gap-1 items-center">
-        <Image src={"/assets/footer-logo.svg"} width={50} height={50} />
+        <Image
+          src={"/assets/footer-logo.svg"}
+          width={50}
+          height={50}
+          alt="logo"
+        />
         <div className="flex flex-col">
           <p className="text-[#FFC603] text-[16px] font-semibold tracking-[6px]">
             BITVERSE

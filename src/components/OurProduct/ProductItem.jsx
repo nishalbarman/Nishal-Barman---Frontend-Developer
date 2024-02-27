@@ -9,6 +9,7 @@ function ProductItem({ imageUrl, title, description }) {
         src={imageUrl}
         width={159}
         height={159}
+        alt={title}
       />
       <p className="font-inter font-bold text-[20px] text-center">{title}</p>
       <div className="bg-[#FECC00] h-[3px] rounded w-[169px] m-[12px_0px]"></div>

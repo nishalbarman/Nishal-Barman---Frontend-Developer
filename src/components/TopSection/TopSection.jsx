@@ -29,6 +29,7 @@ function TopSection() {
             src={"/assets/ring-with-star.png"}
             width={200}
             height={200}
+            alt="ring with star"
           />
         </div>
 
@@ -49,6 +50,7 @@ function TopSection() {
           style={{
             animation: "bank-from-bottom 2s ease-in-out 0s 1 normal forwards",
           }}
+          alt="bank"
         />
 
         <div
@@ -70,6 +72,7 @@ function TopSection() {
             src={"/assets/bottom-curve-line-yellow.svg"}
             width={240}
             height={240}
+            alt="curve line"
           />
         </div>
       </div>
