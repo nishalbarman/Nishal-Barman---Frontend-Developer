@@ -4,74 +4,17 @@ import Image from "next/image";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import TokenItem from "./TokenItem";
 import { useEffect, useState } from "react";
-
-const demoTokenData = [
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-  {
-    title: "Bitcoun",
-    symbol: "BTC",
-    decimals: "18",
-    marketCap: "$100000",
-    chain: "Bitcoin",
-  },
-];
+import axios from "axios";
 
 function OurTokens() {
-  const [tokenData, setTokenData] = useState(demoTokenData);
+  const [tokenData, setTokenData] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
 
   const getTokenData = async () => {
     try {
-      const response = await axios.get(`/api/v1/tokens?page=${page}&limit=6`);
+      const response = await axios.get(`/api/tokens?page=${page}&limit=6`);
+      setTotalPage(response.data.totalPages);
       setTokenData(response.data.tokenData);
     } catch (error) {
       console.error(error);
@@ -80,7 +23,7 @@ function OurTokens() {
 
   useEffect(() => {
     getTokenData();
-  }, []);
+  }, [page]);
 
   return (
     <div className="relative h-fit w-[100%] flex flex-col items-center mt-[8.5rem]">
@@ -110,13 +53,23 @@ function OurTokens() {
           })}
         </div>
         <div className="flex justify-evenly items-center gap-10 mt-[60px]">
-          <button className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px]">
+          <button
+            onClick={() => {
+              setPage((prev) => prev - 1);
+            }}
+            disabled={page <= 1}
+            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed">
             Previous
           </button>
           <p className="text-[14px] font-inter font-medium text-[#FFFFFF]">
-            Page 1 of 10
+            Page {page} of {totalPage}
           </p>
-          <button className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px]">
+          <button
+            onClick={() => {
+              setPage((prev) => prev + 1);
+            }}
+            disabled={page >= totalPage}
+            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed">
             Next
           </button>
         </div>

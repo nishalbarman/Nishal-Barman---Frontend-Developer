@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer.jsx/Footer";
 import OurProduct from "@/components/OurProduct/OurProduct";
 import OurTokens from "@/components/OurTokens/OurTokens";
 import RoadMap from "@/components/RoadMap/RoadMap";
@@ -10,6 +11,7 @@ export default function Home() {
       <OurProduct />
       <RoadMap />
       <OurTokens />
+      <Footer />
     </main>
   );
 }
