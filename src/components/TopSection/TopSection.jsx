@@ -32,7 +32,7 @@ function TopSection() {
         height={350}
       />
 
-      <div className="relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center">
+      <div className="relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center  max-[591px]:scale-[0.9]">
         <div
           style={{
             animation:
