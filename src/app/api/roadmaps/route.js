@@ -45,8 +45,8 @@ export function GET(req) {
   try {
     const searchParams = req.nextUrl.searchParams;
     console.log(searchParams);
-    const page = searchParams.get("page") || 1;
-    const limit = searchParams.get("limit") || 6;
+    let page = searchParams.get("page") || 1;
+    let limit = searchParams.get("limit") || 6;
 
     if (limit > roadMapDemoItems.length) limit = roadMapDemoItems.length;
 
