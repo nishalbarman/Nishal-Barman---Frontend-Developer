@@ -3,6 +3,9 @@
     opacity: 0;
     transform: translateX(-500px);
   }
+  90% {
+    transform: translateX(26px);
+  }
   100% {
     opacity: 1;
     transform: translateX(0px);
@@ -34,6 +37,9 @@
   0% {
     opacity: 0;
     transform: translateX(500px);
+  }
+  90% {
+    transform: translateX(-26px);
   }
   100% {
     opacity: 1;

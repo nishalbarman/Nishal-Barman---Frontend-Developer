@@ -14,7 +14,7 @@ function TopSection() {
         <div
           style={{
             animation:
-              "swipe-left-to-right 2s ease-in-out 0s 1 normal forwards",
+              "swipe-left-to-right 1.5s ease-in-out 0s 1 normal forwards",
           }}
           className="opacity-0 relative flex items-center">
           <p className="text-nowrap font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px]">
@@ -25,7 +25,7 @@ function TopSection() {
             y
           </p>
           <Image
-            className="absolute right-[-50px] bottom-[-110px] max-[827px]:w-[80px] max-[827px]:top-[35px] max-[827px]:right-[-16px]"
+            className="animate-up-down absolute right-[-50px] bottom-[-110px] max-[827px]:w-[80px] max-[827px]:top-[35px] max-[827px]:right-[-16px]"
             src={"/assets/ring-with-star.png"}
             width={200}
             height={200}
@@ -36,7 +36,7 @@ function TopSection() {
         <p
           style={{
             animation:
-              "swipe-left-to-right 2s ease-in-out 0s 1 normal forwards",
+              "swipe-left-to-right 1.5s ease-in-out 0s 1 normal forwards",
           }}
           className="opacity-0 font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px] ">
           to
@@ -48,14 +48,14 @@ function TopSection() {
           width={340}
           height={340}
           style={{
-            animation: "bank-from-bottom 2s ease-in-out 0s 1 normal forwards",
+            animation: "bank-from-bottom 1.5s ease-in-out 0s 1 normal forwards",
           }}
           alt="bank"
         />
 
         <div
           style={{
-            animation: "right-to-left 1.5s ease-in-out 0.3s 1 normal forwards",
+            animation: "right-to-left 1.5s ease-in-out 0s 1 normal forwards",
           }}
           className="opacity-0">
           <span className="z-[3] font-bold before:content-star before:absolute before:left-[-semi16px] uppercase text-[76px] font-kanit max-[827px]:text-[45px] text-nowrap">
@@ -78,7 +78,7 @@ function TopSection() {
       </div>
       <div
         style={{
-          animation: "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
+          animation: "text-bottom-to-top 1.5s ease-in-out 0s 1 normal forwards",
         }}
         className="max-[1440px]:custom-zoom flex flex-col gap-[40px] items-center w-[1000px] max-[958px]:w-[90%] opacity-0">
         <p className="text-[24px] text-center text-[#FDFFE3] font-inter max-[958px]:text-[18px]">

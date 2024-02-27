@@ -6,6 +6,7 @@ import { config } from "@/config/wagmi";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./animations.css";
+import { AnimationWrapper } from "@/contexts/AnimationContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <WagmiContextProvider initialState={initialState}>
-          {children}
+          <AnimationWrapper>{children}</AnimationWrapper>
         </WagmiContextProvider>
       </body>
     </html>

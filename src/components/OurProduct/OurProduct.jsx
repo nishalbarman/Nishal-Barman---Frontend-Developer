@@ -1,6 +1,10 @@
-import Image from "next/image";
+"use client";
+
 import SectionTitle from "../SectionTitle/SectionTitle";
 import ProductItem from "./ProductItem";
+import { useContext, useEffect, useRef, useState } from "react";
+import { animationContext } from "@/contexts/AnimationContext";
+import { isElementInViewport } from "@/helper/utils";
 
 function OurProduct() {
   const productItem = [
@@ -36,13 +40,36 @@ function OurProduct() {
     },
   ];
 
+  const [isShowAnimation, setIsShowanimation] = useState(false);
+
+  const { scrolling } = useContext(animationContext);
+
+  console.log(scrolling);
+
+  const productRef = useRef(null);
+
+  useEffect(() => {
+    console.log(productRef?.current);
+    if (isShowAnimation === false) {
+      console.log("I am checking");
+      setIsShowanimation(isElementInViewport(productRef.current));
+    }
+    
+  }, [scrolling]);
+
   return (
     <div
+      ref={productRef}
       id="products"
-      className="max-[1440px]:custom-zoom p-[0px_2%] opacity-0 relative h-fit w-[100%] flex flex-col items-center"
-      style={{
-        animation: "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
-      }}>
+      className={`max-[1440px]:custom-zoom p-[0px_2%] relative h-fit w-[100%] flex flex-col items-center opacity-0`}
+      style={
+        isShowAnimation
+          ? {
+              animation:
+                "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
+            }
+          : {}
+      }>
       <div className="relative flex flex-col items-center w-fit h-fit">
         <SectionTitle title={"Our-Products"} />
         <p className="font-inter text-[20px] text-center mb-[3.5rem]">
