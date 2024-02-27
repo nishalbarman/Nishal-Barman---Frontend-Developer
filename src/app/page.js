@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer.jsx/Footer";
+import Navbar from "@/components/Navbar/Navbar";
 import OurProduct from "@/components/OurProduct/OurProduct";
 import OurTokens from "@/components/OurTokens/OurTokens";
 import RoadMap from "@/components/RoadMap/RoadMap";

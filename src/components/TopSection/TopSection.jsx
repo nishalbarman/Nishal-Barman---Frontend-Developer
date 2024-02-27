@@ -2,10 +2,13 @@ import Image from "next/image";
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import ClientSideTopSection from "./ClientSideTopSection";
+import Navbar from "../Navbar/Navbar";
 
 function TopSection() {
   return (
     <div className="relative h-fit w-[100%] flex flex-col items-center bg-[url('/assets/dust.svg')] bg-no-repeat bg-center bg-fill">
+      <Navbar />
+
       <Image
         className="absolute left-0 top-0"
         src={"/assets/cube.svg"}

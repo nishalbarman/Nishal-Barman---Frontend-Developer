@@ -15,7 +15,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
   {
@@ -23,7 +23,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
   {
@@ -31,7 +31,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
   {
@@ -39,7 +39,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
   {
@@ -47,7 +47,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
   {
@@ -55,7 +55,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
   {
@@ -63,7 +63,7 @@ const demoData = [
     tokenName: "Bitcoin",
     symbol: "BTC",
     decimals: "18",
-    marketCap: "100000",
+    marketcap: "100000",
     chain: "Bitcoin",
   },
 ];
