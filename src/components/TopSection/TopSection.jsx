@@ -32,7 +32,7 @@ function TopSection() {
         height={350}
       />
 
-      <div className="max-[1366px]:scale-[0.9] relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center  max-[591px]:scale-[0.9]">
+      <div className="max-[1366px]:custom-zoom relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center max-[591px]:custom-zoom">
         <div
           style={{
             animation:
