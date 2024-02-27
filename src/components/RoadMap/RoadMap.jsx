@@ -25,7 +25,7 @@ async function RoadMap() {
     <div
       id="roadmap"
       className="w-[100%] bg-[#fecc00] flex flex-col items-center p-[0_13%] max-[597px]:p-[0_10px] bg-split-div">
-      <div className="translate-y-[10rem] w-[100%] mt-[-5rem]">
+      <div className="max-[590px]:translate-y-[2rem] translate-y-[5rem] w-[100%]">
         <div
           style={{
             animation:
@@ -45,7 +45,7 @@ async function RoadMap() {
       </div>
 
       <div
-        className="flex snap-x snap-mandatory overflow-x-scroll items-center w-[100%] max-[597px]:gap-10 p-[5%_0]"
+        className="flex snap-x snap-mandatory overflow-x-scroll items-center w-[100%] max-[597px]:gap-10 p-[0_0_5%]"
         style={{
           animation:
             "roadmap-right-to-left 2s ease-in-out 0s 1 normal forwards",
