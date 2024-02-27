@@ -1,11 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
-function SectionTitle({ title, textColor, align }) {
+function SectionTitle({ title, textColor, align, animation = undefined }) {
   const splitedTitle = title.split("-");
   console.log(textColor ? "true" : "false", align);
   return (
-    <div className={`flex justify-${align || "center"} mb-8`}>
+    <div
+      style={
+        !!animation
+          ? {
+              animation: animation,
+            }
+          : {}
+      }
+      className={`${!!animation && "opacity-0"} flex justify-${
+        align || "center"
+      } mb-8`}>
       <p className="relative font-kanit font-semibold text-[56px] font-kanit">
         {splitedTitle[0] || ""}
         <span
@@ -16,6 +26,9 @@ function SectionTitle({ title, textColor, align }) {
           {splitedTitle[1]}
         </span>
         <Image
+          style={{
+            animation: "width-fill 2s ease-in-out 0s 1 normal forwards",
+          }}
           className="inline-block absolute right-[-10px] bottom-[-5px] w-[186px] select-none"
           src={`${
             textColor === "black"

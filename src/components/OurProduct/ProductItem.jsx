@@ -3,9 +3,9 @@ import React from "react";
 
 function ProductItem({ imageUrl, title, description }) {
   return (
-    <div className="flex flex-col items-center w-[314px] h-[398px] items-center p-1 border-[rgb(113,96,26)] border-[2px] rounded-[12px] bg-[#141411]">
+    <div className="group/product flex flex-col items-center w-[314px] h-[398px] items-center p-1 border-[rgb(113,96,26)] border-[2px] rounded-[12px] bg-[#141411]">
       <Image
-        className="object-contain aspect-square"
+        className="object-contain aspect-square group-hover/product:animate-send-top-rotate"
         src={imageUrl}
         width={159}
         height={159}

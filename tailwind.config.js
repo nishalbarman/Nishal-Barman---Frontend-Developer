@@ -11,6 +11,10 @@ module.exports = {
       inter: '"Inter", sans-serif',
     },
     extend: {
+      animation: {
+        "send-top-rotate":
+          "send-top-rotate 2s ease-in-out 0s 1 normal forwards",
+      },
       content: {
         star: "url('/assets/star.svg')",
         "curve-line-yl": "url('/assets/bottom-curve-line-yellow.svg')",

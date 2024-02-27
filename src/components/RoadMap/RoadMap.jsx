@@ -24,10 +24,15 @@ async function RoadMap() {
   return (
     <div
       id="roadmap"
-      className="w-[100%] flex flex-col items-center mt-[8.5rem] overflow-x-auto">
+      className="w-[100%] flex flex-col items-center mt-[8.5rem] overflow-x-hidden">
       <div className="bg-[#fecc00] min-h-[500px] w-[100%] p-[4%_13%]">
         <div className={`flex justify-left} mb-8`}>
-          <p className="relative font-kanit font-semibold text-[56px] font-kanit">
+          <p
+            style={{
+              animation:
+                "roadmap-right-to-left 3s ease-in-out 1s 1 normal forwards",
+            }}
+            className="relative font-kanit font-semibold text-[56px] font-kanit">
             <span
               className={`z-[1] font-kanit font-semibold text-[56px] text-[black]`}>
               {" "}
@@ -43,7 +48,12 @@ async function RoadMap() {
         </div>
       </div>
 
-      <div className="z-[999] mt-[-373px] flex flex-col items-center w-[100%] p-[0_13%] max-[597px]:p-[0_1%] overflow-x-auto">
+      <div
+        style={{
+          animation:
+            "roadmap-right-to-left 2s ease-in-out 0s 1 normal forwards",
+        }}
+        className="z-[999] mt-[-373px] flex flex-col items-center w-[100%] p-[0_13%] max-[597px]:p-[0_1%] overflow-x-auto">
         <div className="z-[999] flex snap-x snap-mandatory overflow-x-auto  items-center w-[100%] p-[2rem_0px] max-[597px]:gap-10">
           <GapStart />
           {roadmapData?.map((item, index, array) => {

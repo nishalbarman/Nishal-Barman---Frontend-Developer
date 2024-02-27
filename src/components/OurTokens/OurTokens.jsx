@@ -38,7 +38,6 @@ function OurTokens() {
         width={1570}
         height={1570}
       />
-
       <Image
         className="z-[999] absolute left-[-50px] bottom-[0]"
         src={"/assets/piramid.svg"}
@@ -47,7 +46,10 @@ function OurTokens() {
       />
 
       <div className="relative flex flex-col items-center w-fit h-fit">
-        <SectionTitle title={"Our-Tokens"} />
+        <SectionTitle
+          title={"Our-Tokens"}
+          animation={"zoom-in 3s ease-in-out 0s 1 normal forwards"}
+        />
         <p className="font-inter text-[20px] text-center">
           Pellentesque habitant morbi tristique senectus et netus et
           Pellentesque habitant morbi.

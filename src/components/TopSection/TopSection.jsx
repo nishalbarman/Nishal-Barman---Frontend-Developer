@@ -25,13 +25,6 @@ function TopSection() {
         height={1500}
       />
 
-      {/* <Image
-        className="absolute right-[-270px] top-[20px]"
-        src={"/assets/radial-rounded-light.png"}
-        width={1125}
-        height={1125}
-      /> */}
-
       <Image
         className="absolute right-0 bottom-[-400px]"
         src={"/assets/star-react.png"}
@@ -40,7 +33,12 @@ function TopSection() {
       />
 
       <div className="relative flex flex-col justify-center w-fit h-fit bg-[url('/assets/graph-paper.png')] p-[150px] bg-no-repeat bg-center">
-        <div className="relative flex items-center">
+        <div
+          style={{
+            animation:
+              "swipe-left-to-right 2s ease-in-out 0s 1 normal forwards",
+          }}
+          className="opacity-0 relative flex items-center">
           <p className="text-nowrap font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px]  ">
             Your gatew
             <span className="relative before:content-gateway_star before:absolute before:top-[43%] before:left-[57%] before:translate-x-[-50%] before:translate-y-[-50%] before:z-[10] max-[827px]:before:hidden">
@@ -56,19 +54,31 @@ function TopSection() {
           />
         </div>
 
-        <p className="font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px] ">
+        <p
+          style={{
+            animation:
+              "swipe-left-to-right 2s ease-in-out 0s 1 normal forwards",
+          }}
+          className="opacity-0 font-semibold uppercase text-[76px] font-kanit max-[827px]:text-[45px] ">
           to
         </p>
 
         <Image
-          className="max-[827px]:w-[160px] max-[827px]:h-[160px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] select-none w-[340px] h-[340px]"
+          style={{
+            animation: "bank-from-bottom 2s ease-in-out 0s 1 normal forwards",
+          }}
+          className="opacity-0 max-[827px]:w-[160px] max-[827px]:h-[160px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] select-none w-[340px] h-[340px]"
           src={"/assets/bank.png"}
           width={340}
           height={340}
         />
 
-        <div className="relative">
-          <span className="relative z-[2] font-bold before:content-star before:absolute before:left-[-semi16px] uppercase text-[76px] font-kanit max-[827px]:text-[45px] text-nowrap">
+        <div
+          style={{
+            animation: "right-to-left 1.5s ease-in-out 0.3s 1 normal forwards",
+          }}
+          className="relative opacity-0">
+          <span className="relative z-[3] font-bold before:content-star before:absolute before:left-[-semi16px] uppercase text-[76px] font-kanit max-[827px]:text-[45px] text-nowrap">
             <span className="relative before:content-defi_d_star before:absolute before:top-[40%] before:left-[1px] before:translate-x-[-50%] before:translate-y-[-50%] before:z-[10]">
               D
             </span>
@@ -85,7 +95,11 @@ function TopSection() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-[40px] items-center w-[1000px] max-[958px]:w-[90%] mt-[-65px]">
+      <div
+        style={{
+          animation: "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
+        }}
+        className="flex flex-col gap-[40px] items-center w-[1000px] max-[958px]:w-[90%] mt-[-65px] opacity-0">
         <p className="text-[24px] text-center text-[#FDFFE3] font-inter max-[958px]:text-[18px]">
           Lorem ipsum dolor sit amet consectetur. Porta amet tellus suspendisse
           id velit proin eleifend id mauris. Amet sem in id eget nunc quam lacus

@@ -1,0 +1,83 @@
+@keyframes swipe-left-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bank-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-bottom-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes right-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes roadmap-right-to-left {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes send-top-rotate {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100px);
+    rotate: -25deg;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    scale: 0.6;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes width-fill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+  }
+}

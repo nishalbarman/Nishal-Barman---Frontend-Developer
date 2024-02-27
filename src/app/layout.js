@@ -1,11 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./animations.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Crypto - your crypto wallet online",
-  description: "Crypto - your crypto wallet online",
+  title: "Bitverse - your crypto friend is online",
+  description: "Bitverse - your crypto friend is online",
 };
 
 export default function RootLayout({ children }) {
