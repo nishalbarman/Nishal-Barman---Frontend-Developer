@@ -8,7 +8,7 @@ const parseItem = (number) => {
 
 function RoadMapItem({ title, description, year, index }) {
   return (
-    <div className="snap-start h-fit max-[597px]:w-[100%] w-[399px] flex flex-col items-center max-[597px]:w-[300px]">
+    <div className="snap-start h-fit max-[597px]:w-[100%] w-[399px] flex flex-col items-center">
       <span
         style={{
           WebkitTextStroke: "6px #FEE167",

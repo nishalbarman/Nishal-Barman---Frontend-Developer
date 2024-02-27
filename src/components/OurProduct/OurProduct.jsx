@@ -49,7 +49,7 @@ function OurProduct() {
           Pellentesque habitant morbi tristique senectus et netus et
           Pellentesque habitant morbi.
         </p>
-        <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-center gap-[48px] w-fit">
+        <div className="grid max-[500px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-center gap-[48px] w-fit">
           {productItem?.map((item, index) => {
             return <ProductItem key={index} {...item} />;
           })}

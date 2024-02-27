@@ -3,7 +3,7 @@ import React from "react";
 
 function ProductItem({ imageUrl, title, description }) {
   return (
-    <div className="group/product flex flex-col items-center w-[314px] h-[398px] items-center p-1 border-[rgb(113,96,26)] border-[2px] rounded-[12px] bg-[#141411]">
+    <div className="group/product flex flex-col items-center w-[314px] h-[398px] items-center p-1 border-[rgb(113,96,26)] border-[2px] rounded-[12px] bg-[#141411] max-[597px]:w-[100%]">
       <Image
         className="object-contain aspect-square group-hover/product:animate-send-top-rotate"
         src={imageUrl}
