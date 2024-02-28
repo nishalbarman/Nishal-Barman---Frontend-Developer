@@ -86,7 +86,7 @@ function OurTokens() {
               navigation.push("/#tokens");
             }}
             disabled={page <= 1}
-            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed">
+            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed disabled:bg-[gray]">
             Previous
           </button>
           <p className="text-[14px] font-inter font-medium text-[#FFFFFF]">
@@ -98,7 +98,7 @@ function OurTokens() {
               navigation.push("/#tokens");
             }}
             disabled={page >= totalPage}
-            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed">
+            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed disabled:bg-[gray]">
             Next
           </button>
         </div>
