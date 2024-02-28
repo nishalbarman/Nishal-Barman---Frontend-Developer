@@ -5,6 +5,7 @@ import ProductItem from "./ProductItem";
 import { useContext, useEffect, useRef, useState } from "react";
 import { animationContext } from "@/contexts/AnimationContext";
 import { isElementInViewport } from "@/helper/utils";
+import Image from "next/image";
 
 function OurProduct() {
   const productItem = [
@@ -54,7 +55,6 @@ function OurProduct() {
       console.log("I am checking");
       setIsShowanimation(isElementInViewport(productRef.current));
     }
-    
   }, [scrolling]);
 
   return (
@@ -76,11 +76,20 @@ function OurProduct() {
           Pellentesque habitant morbi tristique senectus et netus et
           Pellentesque habitant morbi.
         </p>
-        <div className="grid max-[500px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-center gap-[48px] w-fit">
-          {productItem?.map((item, index) => {
-            return <ProductItem key={index} {...item} />;
-          })}
-        </div>
+        {!!productItem && productItem?.length > 0 ? (
+          <div className="grid max-[500px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-center gap-[48px] w-fit">
+            {productItem?.map((item, index) => {
+              return <ProductItem key={index} {...item} />;
+            })}
+          </div>
+        ) : (
+          <Image
+            className="mt-[3.4rem]"
+            src="/assets/loading.gif"
+            width={100}
+            height={100}
+          />
+        )}
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { animationContext } from "@/contexts/AnimationContext";
 import { isElementInViewport } from "@/helper/utils";
+import Image from "next/image";
 
 function OurTokens() {
   const navigation = useRouter();
@@ -65,43 +66,54 @@ function OurTokens() {
           Pellentesque habitant morbi tristique senectus et netus et
           Pellentesque habitant morbi.
         </p>
-        <div
-          className="grid max-[500px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-center mt-[60px] gap-[48px] w-[100%] opacity-0"
-          style={
-            isShowAnimation
-              ? {
-                  animation:
-                    "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
-                }
-              : {}
-          }>
-          {tokenData?.map((item, index) => {
-            return <TokenItem key={index} {...item} />;
-          })}
-        </div>
-        <div className="flex justify-evenly items-center gap-10 mt-[9%]">
-          <button
-            onClick={() => {
-              setPage((prev) => prev - 1);
-              navigation.push("/#tokens");
-            }}
-            disabled={page <= 1}
-            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed disabled:bg-[gray]">
-            Previous
-          </button>
-          <p className="text-[14px] font-inter font-medium text-[#FFFFFF]">
-            Page {page} of {totalPage}
-          </p>
-          <button
-            onClick={() => {
-              setPage((prev) => prev + 1);
-              navigation.push("/#tokens");
-            }}
-            disabled={page >= totalPage}
-            className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed disabled:bg-[gray]">
-            Next
-          </button>
-        </div>
+        {!!tokenData && tokenData.length > 0 ? (
+          <>
+            <div
+              className="grid max-[500px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-center mt-[60px] gap-[48px] w-[100%] opacity-0"
+              style={
+                isShowAnimation
+                  ? {
+                      animation:
+                        "text-bottom-to-top 2s ease-in-out 0s 1 normal forwards",
+                    }
+                  : {}
+              }>
+              {tokenData?.map((item, index) => {
+                return <TokenItem key={index} {...item} />;
+              })}
+            </div>
+            <div className="flex justify-evenly items-center gap-10 mt-[9%]">
+              <button
+                onClick={() => {
+                  setPage((prev) => prev - 1);
+                  navigation.push("/#tokens");
+                }}
+                disabled={page <= 1}
+                className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed disabled:bg-[gray]">
+                Previous
+              </button>
+              <p className="text-[14px] font-inter font-medium text-[#FFFFFF]">
+                Page {page} of {totalPage}
+              </p>
+              <button
+                onClick={() => {
+                  setPage((prev) => prev + 1);
+                  navigation.push("/#tokens");
+                }}
+                disabled={page >= totalPage}
+                className="w-[100px] h-[36px] bg-[#FFFFFF] text-black font-inter font-medium text-[14px] rounded-[8px] disabled:cursor-not-allowed disabled:bg-[gray]">
+                Next
+              </button>
+            </div>
+          </>
+        ) : (
+          <Image
+            className="mt-[3.4rem]"
+            src="/assets/loading.gif"
+            width={100}
+            height={100}
+          />
+        )}
       </div>
     </div>
   );

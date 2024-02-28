@@ -50,7 +50,7 @@ export function GET(req) {
 
     if (limit > roadMapDemoItems.length) limit = roadMapDemoItems.length;
 
-    const total = Math.round(roadMapDemoItems.length % limit);
+    const total = Math.ceil(roadMapDemoItems.length / limit);
     const roadmapData = roadMapDemoItems.slice(page - 1, limit);
 
     return NextResponse.json({

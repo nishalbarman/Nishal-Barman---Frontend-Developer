@@ -1,86 +1,94 @@
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
+import { connect } from "@/dbConfig/dbConfig";
+import { TokenModel } from "@/model/mongooseModels";
 
-const demoData = [
-  {
-    img: "/icons/bitcoin.svg",
-    img: "/icons/bitcoin.svg",
-    tokenName: "AlphaToken",
-    symbol: "ALP",
-    decimals: 18,
-    marketcap: "1000000",
-    chain: "Ethereum",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-  {
-    img: "/icons/bitcoin.svg",
-    tokenName: "Bitcoin",
-    symbol: "BTC",
-    decimals: "18",
-    marketcap: "100000",
-    chain: "Bitcoin",
-  },
-];
+// const demoData = [
+//   {
+//     img: "/icons/bitcoin.svg",
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "AlphaToken",
+//     symbol: "ALP",
+//     decimals: 18,
+//     marketcap: "1000000",
+//     chain: "Ethereum",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin1",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin2",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin3",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin4",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin5",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin6",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+//   {
+//     img: "/icons/bitcoin.svg",
+//     tokenName: "Bitcoin7",
+//     symbol: "BTC",
+//     decimals: "18",
+//     marketcap: "100000",
+//     chain: "Bitcoin",
+//   },
+// ];
 
-export function GET(req) {
+connect();
+
+export async function GET(req) {
   try {
     const searchParams = req.nextUrl.searchParams;
-    console.log(searchParams);
     let page = searchParams.get("page") || 1;
     let limit = searchParams.get("limit") || 6;
 
-    if (limit > demoData.length) limit = demoData.length;
+    /***                FOR HARDCODED TEST DATA             ****/
+    /***/ // if (limit > demoData.length) limit = demoData.length; /***/
+    /***/ // const total = Math.ceil(demoData.length / limit); /***/
+    /***/ // const tokenData = demoData.slice(page - 1, limit); /***/
+    /***               FOR HARDCODED TEST DATA              ****/
 
-    const total = Math.round(demoData.length % limit);
-    const tokenData = demoData.slice(page - 1, limit);
+    const skip = (page - 1) * limit;
+    const total = Math.ceil((await TokenModel.countDocuments({})) / limit) || 0;
+    const tokenData = (await TokenModel.find({}).skip(skip).limit(limit)) || [];
 
     return NextResponse.json({
       totalPages: total,
