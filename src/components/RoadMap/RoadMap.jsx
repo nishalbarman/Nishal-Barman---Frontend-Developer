@@ -19,10 +19,10 @@ function RoadMap() {
       const { data } = await axios.get(
         `/api/roadmaps?page=${page}&limit=${limit}`
       );
-      setTotal(data.total);
+      setTotal(data.totalPages);
       setRoadmapData(data.roadmapData);
     } catch (error) {
-      console.log("RoadMap Component Error----------------->", error);
+      console.log("RoadMap Componen ------>", error);
     }
   };
 
@@ -35,12 +35,9 @@ function RoadMap() {
 
   const { scrolling } = useContext(animationContext);
 
-  console.log("Roadmap component", scrolling);
-
   const productRef = useRef(null);
 
   useEffect(() => {
-    console.log(productRef?.current);
     if (isShowAnimation === false) {
       setIsShowanimation(isElementInViewport(productRef.current));
     }
@@ -77,29 +74,39 @@ function RoadMap() {
         </div>
       </div>
 
-      <div
-        className={`flex snap-x snap-mandatory overflow-x-scroll items-center w-[100%] max-[597px]:gap-10 p-[0_0_5%] ${
-          isShowAnimation ? "opacity-1" : "opacity-0"
-        }`}
-        style={
-          isShowAnimation
-            ? {
-                animation:
-                  "roadmap-right-to-left 2s ease-in-out 0s 1 normal forwards",
-              }
-            : {}
-        }>
-        <GapStart />
-        {roadmapData?.map((item, index, array) => {
-          return (
-            <>
-              <RoadMapItem key={index} index={index + 1} {...item} />
-              {index !== array.length - 1 && <GapFiller key={index + index} />}
-            </>
-          );
-        })}
-        <GapEnd />
-      </div>
+      {roadmapData?.length > 0 ? (
+        <div
+          className={`flex snap-x snap-mandatory overflow-x-scroll items-center w-[100%] max-[597px]:gap-10 p-[0_0_5%] overflow-y-hidden ${
+            isShowAnimation ? "opacity-1" : "opacity-0"
+          }`}
+          style={
+            isShowAnimation
+              ? {
+                  animation:
+                    "roadmap-right-to-left 2s ease-in-out 0s 1 normal forwards",
+                }
+              : {}
+          }>
+          <GapStart />
+          {roadmapData?.map((item, index, array) => {
+            return (
+              <>
+                <RoadMapItem key={item._id} index={index + 1} {...item} />
+                {index !== array.length - 1 && <GapFiller key={index} />}
+              </>
+            );
+          })}
+          <GapEnd />
+        </div>
+      ) : (
+        <Image
+          className="mt-[10rem]"
+          src="/assets/loading-2.gif"
+          width={50}
+          height={50}
+          alt="loading gif"
+        />
+      )}
     </div>
   );
 }

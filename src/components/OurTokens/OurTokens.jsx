@@ -35,12 +35,9 @@ function OurTokens() {
 
   const { scrolling } = useContext(animationContext);
 
-  console.log(scrolling);
-
   const productRef = useRef(null);
 
   useEffect(() => {
-    console.log(productRef?.current);
     if (isShowAnimation === false) {
       setIsShowanimation(isElementInViewport(productRef.current));
     }
@@ -109,9 +106,10 @@ function OurTokens() {
         ) : (
           <Image
             className="mt-[3.4rem]"
-            src="/assets/loading.gif"
-            width={100}
-            height={100}
+            src="/assets/loading-2.gif"
+            width={50}
+            height={50}
+            alt="loading gif"
           />
         )}
       </div>

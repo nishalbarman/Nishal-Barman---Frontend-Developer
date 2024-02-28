@@ -11,6 +11,7 @@ function TokenItem({ img, tokenName, symbol, decimals, marketcap, chain }) {
         src={img}
         width={111}
         height={111}
+        alt={tokenName}
       />
       <p className="font-inter font-bold text-[24px] text-left mb-2">
         {tokenName}

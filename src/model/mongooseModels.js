@@ -9,8 +9,26 @@ const tokenSchema = new mongoose.Schema({
   chain: { type: String, required: true },
 });
 
+const roadmapSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  qYear: { type: String, required: true },
+});
+
+const productSchema = new mongoose.Schema({
+  imageUrl: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+});
+
 const TokenModel =
   mongoose.models.tokens || mongoose.model("tokens", tokenSchema);
+
+const RoadmapModel =
+  mongoose.models.roadmaps || mongoose.model("roadmaps", roadmapSchema);
+
+const ProductModel =
+  mongoose.models.products || mongoose.model("products", productSchema);
 
 /** START: Validators **/
 TokenModel.schema.path("img").validate({
@@ -37,6 +55,30 @@ TokenModel.schema.path("chain").validate({
   validator: (value) => !!value,
   message: "chain required",
 });
+RoadmapModel.schema.path("title").validate({
+  validator: (value) => !!value,
+  message: "title required",
+});
+RoadmapModel.schema.path("description").validate({
+  validator: (value) => !!value,
+  message: "description required",
+});
+RoadmapModel.schema.path("qYear").validate({
+  validator: (value) => !!value,
+  message: "qYear required",
+});
+ProductModel.schema.path("title").validate({
+  validator: (value) => !!value,
+  message: "title required",
+});
+ProductModel.schema.path("description").validate({
+  validator: (value) => !!value,
+  message: "description required",
+});
+ProductModel.schema.path("imageUrl").validate({
+  validator: (value) => !!value,
+  message: "imageUrl required",
+});
 /** END: Validators **/
 
-export { TokenModel };
+export { TokenModel, RoadmapModel, ProductModel };
