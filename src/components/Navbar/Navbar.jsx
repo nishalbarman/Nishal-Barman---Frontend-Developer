@@ -5,19 +5,21 @@ import WalletConnectButton from "../WalletConnectButton/WalletConnectButton";
 
 function Navbar() {
   return (
-    <div className="max-[1113px]:hidden z-[99] mt-10 relative bg-[#34300E] border-[1px] border-[#706F57] shadow-[0px_0px_10px_3px_#352F0E] flex items-center justify-between h-[88px] w-[94%] rounded-[16px] p-[0_2%]">
-      <div className="flex gap-1 items-center">
+    <div className="max-[1113px]:hidden z-[99] mt-10 relative  border-[1px] border-[#706F57] shadow-[0px_0px_10px_3px_#352F0E] flex items-center justify-between h-[88px] w-[94%] rounded-[16px] p-[0_2%] backdrop-blur-[13px] bg-[rgba(92,79,5,0.4)]">
+      {/* bg-[#34300E]  */}
+      <div className="flex gap-2 items-center">
         <Image
+          className="self-center"
           src={"/assets/footer-logo.svg"}
-          width={50}
-          height={50}
+          width={55}
+          height={55}
           alt="logo"
         />
-        <div className="flex flex-col">
-          <p className="text-[#FFC603] text-[16px] font-semibold tracking-[6px]">
+        <div className="flex flex-col justify-center">
+          <p className="font-inter text-[#FFC603] text-[16px] font-semibold tracking-[3px]">
             BITVERSE
           </p>
-          <p className="text-[8px] font-semibold tracking-[6px] h-[6px]">
+          <p className="font-inter text-[8.73px] font-bold tracking-[9px]">
             FINANCE
           </p>
         </div>
